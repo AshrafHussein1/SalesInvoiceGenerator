@@ -1,32 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff2b4dae-0364-47d2-aabf-2c953b968cb9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvoiceHeader.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvoiceLine.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/AppMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/CancelEditsListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/CreateInvoiceListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/DeleteInvoiceListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/LoadFileListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/SaveEditsListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/SaveFileListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/CurrentLoadedInvoices.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/FileOperations.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/InvoiceHeader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/InvoiceLine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/AppFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/testPackage/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReadME.rtf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestScreenshot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/InvoicesTableListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/ItemsTableListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AppMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AppMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/FileOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/FileOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/InvoiceHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/InvoiceHeader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/InvoiceLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/InvoiceLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/AppFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/AppFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testPackage/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testPackage/AppTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,19 +39,23 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2DETqUAA7AJsmShUMJ1TZOnLRBc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "settings.editor.selected.configurable": "vcs.Git"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test" />
@@ -66,6 +63,69 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
+  </component>
+  <component name="RunManager" selected="JUnit.AppTest.testReadAndWriteFiles">
+    <configuration name="AppMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="controller.AppMain" />
+      <module name="SalesInvoiceGenerator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in SalesInvoiceGenerator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SalesInvoiceGenerator" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SalesInvoiceGenerator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testPackage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testPackage" />
+      <option name="MAIN_CLASS_NAME" value="testPackage.AppTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest.testReadAndWriteFiles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SalesInvoiceGenerator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testPackage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testPackage" />
+      <option name="MAIN_CLASS_NAME" value="testPackage.AppTest" />
+      <option name="METHOD_NAME" value="testReadAndWriteFiles" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AppTest.testReadAndWriteFiles" />
+        <item itemvalue="Application.AppMain" />
+        <item itemvalue="JUnit.AppTest" />
+        <item itemvalue="JUnit.All in SalesInvoiceGenerator" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

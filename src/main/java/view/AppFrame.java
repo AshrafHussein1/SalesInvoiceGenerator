@@ -1,6 +1,8 @@
 package view;
 
+import model.CurrentLoadedInvoices;
 import model.InvoiceHeader;
+import model.InvoiceLine;
 
 import javax.swing.*;
 import javax.swing.event.CellEditorListener;
@@ -13,6 +15,8 @@ import java.util.EventObject;
 
 public class AppFrame extends JFrame {
 
+    private static String[] invoicesTableHeader = new String[]{"No.","Date","Customer","Total"};
+    private static String[] itemsTableHeader = new String[]{"No.","Item Name","Item Price","Count","Item Total"};
     private static DefaultTableModel itemsTableModel;
     private static DefaultTableModel invoicesTableModel;
     private static JTable invoicesTable;
@@ -55,15 +59,16 @@ public class AppFrame extends JFrame {
         this.setJMenuBar(menuBar);
 
         // Invoices table configurations
-        invoicesTableModel = new DefaultTableModel(new String[][]{
-                {"","","",""},{"","","",""}
-        },new String[]{"No.","Date","Customer","Total"}) {
+        invoicesTableModel = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int row, int column) {
                 //all cells false
                 return false;
             }
         };
+        if(CurrentLoadedInvoices.getInvoices() == null || CurrentLoadedInvoices.getInvoices().size() == 0)
+            invoicesTableModel.setColumnIdentifiers(invoicesTableHeader);
+        else updateInvoicesTable(CurrentLoadedInvoices.getInvoices());
         invoicesTable = new JTable(invoicesTableModel);
         invoicesTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         invoicesTable.setShowGrid(true);
@@ -118,9 +123,7 @@ public class AppFrame extends JFrame {
 
 
         // Invoice items table configurations
-        itemsTableModel = new DefaultTableModel(new String[][]{
-                {"","","","",""},{"","","","",""}
-        },new String[]{"No.","Item Name","Item Price","Count","Item Total"}) {
+        itemsTableModel = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int row, int column) {
                 //all cells false
@@ -134,6 +137,7 @@ public class AppFrame extends JFrame {
                 }
             }
         };
+        itemsTableModel.setColumnIdentifiers(itemsTableHeader);
         invoiceItemsTable = new JTable(itemsTableModel);
         invoiceItemsTable.setBorder(BorderFactory.createLineBorder(Color.BLUE));
         invoiceItemsTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -163,6 +167,23 @@ public class AppFrame extends JFrame {
     }
 
     public static void updateInvoicesTable(ArrayList<InvoiceHeader> invoices) {
+        if(invoices != null && invoices.size()>0)
+        {
+            String[][] tableData = new String[invoices.size()][4];
+            for(int index = 0 ; index < invoices.size() ; index++)
+            {
+                tableData[index][0] = Integer.toString(invoices.get(index).getInvoiceNum());
+                tableData[index][1] = invoices.get(index).getInvoiceDate();
+                tableData[index][2] = invoices.get(index).getCustomerName();
+                double total = 0;
+                for(InvoiceLine item : invoices.get(index).getInvoiceLines())
+                {
+                    total = total + (item.getCount()*item.getItemPrice());
+                }
+                tableData[index][3] = Double.toString(total);
+            }
+            invoicesTableModel.setDataVector(tableData,invoicesTableHeader);
+        }
     }
 
     public static void updateInvoiceItemsTableAndInvoiceForm(InvoiceHeader invoice) {
@@ -172,4 +193,6 @@ public class AppFrame extends JFrame {
     public static InvoiceHeader getInvoiceUpdates() {
         return new InvoiceHeader();
     }
+
+
 }
