@@ -23,9 +23,19 @@ public class FileOperations {
         ArrayList<String> headersList = new ArrayList<>(); //this array list represents the file lines
         ArrayList<String> linesList = new ArrayList<>(); //this array list represents the file lines
         if (invoices == null || invoices.size() == 0) { //If there are no invoices to be written, show error message
-            JOptionPane.showMessageDialog(null,
-                    "No invoices found to save to the file ",
-                    "Didn't find invoices to save",JOptionPane.ERROR_MESSAGE);
+            int result = JOptionPane.showConfirmDialog(null,
+                    "No invoices found to save to the file, Do you want to continue with creating empty files ?",
+                    "Didn't find invoices to save", JOptionPane.YES_NO_OPTION);
+            if (result == JOptionPane.YES_OPTION) {
+                try {
+                    BufferedWriter headerFile = new BufferedWriter(new FileWriter(invoiceHeaderFilePath));
+                    headerFile.close();
+                    BufferedWriter itemsFile = new BufferedWriter(new FileWriter(invoiceLineFilePath));
+                    itemsFile.close();
+                } catch (Exception e) {
+                    // Do nothing
+                }
+            }
             return;
         }
         for (InvoiceHeader selectedInvoice : invoices) { // loop on invoices to fill file lines

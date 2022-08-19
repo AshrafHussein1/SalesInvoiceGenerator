@@ -8,23 +8,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff2b4dae-0364-47d2-aabf-2c953b968cb9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ReadME.rtf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestScreenshot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/InvoicesTableListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/ItemsTableListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/AppMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AppMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CancelEditsListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CancelEditsListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CreateInvoiceListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CreateInvoiceListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/DeleteInvoiceListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/DeleteInvoiceListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/InvoicesTableListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/InvoicesTableListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ItemsTableListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ItemsTableListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoadFileListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoadFileListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SaveEditsListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SaveEditsListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SaveFileListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SaveFileListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/CurrentLoadedInvoices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CurrentLoadedInvoices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/FileOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/FileOperations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/InvoiceHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/InvoiceHeader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/InvoiceLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/InvoiceLine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/AppFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/AppFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testPackage/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testPackage/AppTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OPEN_IN_BROWSER" value="true" />
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/TestReport" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -53,7 +61,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "settings.editor.selected.configurable": "vcs.Git"
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "testing.instrumented.configuration"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -64,7 +76,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AppTest.testReadAndWriteFiles">
+  <component name="RunManager" selected="Application.AppMain">
     <configuration name="AppMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controller.AppMain" />
       <module name="SalesInvoiceGenerator" />
@@ -87,8 +99,9 @@
       </method>
     </configuration>
     <configuration name="AppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <output_file path="$PROJECT_DIR$/TestReport/ConsoleLog.txt" is_save="true" />
       <module name="SalesInvoiceGenerator" />
-      <extension name="coverage">
+      <extension name="coverage" track_test_folders="true">
         <pattern>
           <option name="PATTERN" value="testPackage.*" />
           <option name="ENABLED" value="true" />
@@ -120,9 +133,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AppTest.testReadAndWriteFiles" />
         <item itemvalue="Application.AppMain" />
         <item itemvalue="JUnit.AppTest" />
+        <item itemvalue="JUnit.AppTest.testReadAndWriteFiles" />
         <item itemvalue="JUnit.All in SalesInvoiceGenerator" />
       </list>
     </recent_temporary>
@@ -148,5 +161,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/SalesInvoiceGenerator$AppTest.ic" NAME="AppTest Coverage Results" MODIFIED="1660894575672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>testPackage.*</FILTER>
+    </SUITE>
   </component>
 </project>

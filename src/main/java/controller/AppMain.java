@@ -11,6 +11,6 @@ public class AppMain {
         FileOperations.setInvoiceLineFilePath("./InvoiceLine.csv");
         CurrentLoadedInvoices.setInvoices(FileOperations.readFile());
         // Start the application
-        AppFrame appFrame = new AppFrame();
+        new AppFrame();
     }
 }

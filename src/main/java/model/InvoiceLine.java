@@ -1,31 +1,13 @@
 package model;
 
 public class InvoiceLine {
-    private String itemName;
-    private double  itemPrice;
-    private int count;
-
-    public InvoiceLine(){
-        this.itemName = "";
-        this.itemPrice = 0;
-        this.count = 0;
-    }
+    private final String itemName;
+    private final double  itemPrice;
+    private final int count;
 
     public InvoiceLine(String name,double price,int count){
         this.itemName = name;
         this.itemPrice = price;
-        this.count = count;
-    }
-
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
-    }
-
-    public void setItemPrice(double itemPrice) {
-        this.itemPrice = itemPrice;
-    }
-
-    public void setCount(int count) {
         this.count = count;
     }
 
