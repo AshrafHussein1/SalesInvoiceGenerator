@@ -60,9 +60,13 @@ public class AppFrame extends JFrame {
                 return false;
             }
         };
+
+        /* This part is commented due to review point #1 (the tables should be empty then when you press the load button the data will display on the tables)
         if(CurrentLoadedInvoices.getInvoices() == null || CurrentLoadedInvoices.getInvoices().size() == 0)
             invoicesTableModel.setColumnIdentifiers(invoicesTableHeader);
-        else updateInvoicesTable(CurrentLoadedInvoices.getInvoices());
+        else updateInvoicesTable(CurrentLoadedInvoices.getInvoices());*/
+        invoicesTableModel.setColumnIdentifiers(invoicesTableHeader);
+
         invoicesTable = new JTable(invoicesTableModel);
         invoicesTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         invoicesTable.setShowGrid(true);

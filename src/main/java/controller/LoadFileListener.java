@@ -12,9 +12,17 @@ import java.awt.event.ActionListener;
 public class LoadFileListener  implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
-            int result = JOptionPane.showConfirmDialog(null,
+            int result;
+
+            //This part is Edited due to review point #1 (the tables should be empty then when you press the load button the data will display on the tables)
+            if(CurrentLoadedInvoices.getInvoices() == null || CurrentLoadedInvoices.getInvoices().size() == 0)
+                result = JOptionPane.YES_OPTION;
+            else
+                result = JOptionPane.showConfirmDialog(null,
                     "If you loaded a new invoices file, all the unsaved changes in current invoices will be discarded, do you want to continue ?",
                     "Heads up !",JOptionPane.YES_NO_OPTION);
+            //
+
             if(result == JOptionPane.YES_OPTION){
                 String path = "";
                 FileOperations.setInvoiceLineFilePath("");

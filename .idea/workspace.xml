@@ -8,21 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff2b4dae-0364-47d2-aabf-2c953b968cb9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/AppMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AppMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CancelEditsListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CancelEditsListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CreateInvoiceListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CreateInvoiceListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/DeleteInvoiceListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/DeleteInvoiceListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/InvoicesTableListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/InvoicesTableListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ItemsTableListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ItemsTableListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoadFileListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoadFileListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SaveEditsListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SaveEditsListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SaveFileListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SaveFileListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/CurrentLoadedInvoices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CurrentLoadedInvoices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/FileOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/FileOperations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/InvoiceHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/InvoiceHeader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/InvoiceLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/InvoiceLine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/AppFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/AppFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,18 +44,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "testing.instrumented.configuration"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;testing.instrumented.configuration&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test" />
