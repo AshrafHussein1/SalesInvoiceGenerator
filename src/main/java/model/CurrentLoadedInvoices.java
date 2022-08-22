@@ -47,7 +47,7 @@ public class CurrentLoadedInvoices {
         for (InvoiceHeader invoice : invoices) {
             if (invoiceNumber == invoice.getInvoiceNum()) {
                 int itemsCount = invoice.getInvoiceLines().size();
-                invoice.addInvoiceLine(new InvoiceLine("Item"+(itemsCount+1),0,0));
+                invoice.addInvoiceLine(new InvoiceLine("Item"+(itemsCount+1),0,0,invoice));
             }
         }
     }

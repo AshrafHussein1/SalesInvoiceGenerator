@@ -4,11 +4,13 @@ public class InvoiceLine {
     private String itemName;
     private double  itemPrice;
     private int count;
+    private InvoiceHeader header;
 
-    public InvoiceLine(String name,double price,int count){
+    public InvoiceLine(String name,double price,int count,InvoiceHeader header){
         this.itemName = name;
         this.itemPrice = price;
         this.count = count;
+        this.header = header;
     }
 
     public String getItemName() {

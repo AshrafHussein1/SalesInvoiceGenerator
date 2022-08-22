@@ -246,10 +246,9 @@ public class FileOperations {
                             "Invoices list is empty",JOptionPane.ERROR_MESSAGE);
                     break;
                 }
-                InvoiceLine newInvoiceLine = new InvoiceLine(name,price,count);
                 for (InvoiceHeader invoice : invoices) {
                     if (invoice.getInvoiceNum() == invoiceNo) {
-                        invoice.addInvoiceLine(newInvoiceLine); //Add the new item to the corresponding invoice
+                        invoice.addInvoiceLine(new InvoiceLine(name,price,count,invoice)); //Add the new item to the corresponding invoice
                         break;
                     }
                 }
