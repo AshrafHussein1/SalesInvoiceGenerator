@@ -42,4 +42,45 @@ public class CurrentLoadedInvoices {
         }
         return null;
     }
+
+    public static void addNewItem(int invoiceNumber) {
+        for (InvoiceHeader invoice : invoices) {
+            if (invoiceNumber == invoice.getInvoiceNum()) {
+                int itemsCount = invoice.getInvoiceLines().size();
+                invoice.addInvoiceLine(new InvoiceLine("Item"+(itemsCount+1),0,0));
+            }
+        }
+    }
+
+    public static void deleteItem(int invoiceNumber,int index) {
+        for (InvoiceHeader invoice : invoices) {
+            if (invoiceNumber == invoice.getInvoiceNum()) {
+                invoice.deleteItem(index);
+            }
+        }
+    }
+
+    public static void updateItem(int invoiceNumber,int itemIndex,String name,double price, int count) {
+        for (InvoiceHeader invoice : invoices) {
+            if (invoiceNumber == invoice.getInvoiceNum()) {
+                invoice.updateItem( itemIndex, name, price,  count);
+            }
+        }
+    }
+
+    public static void setCustomerName(int invoiceNumber,String name) {
+        for (InvoiceHeader invoice : invoices) {
+            if (invoiceNumber == invoice.getInvoiceNum()) {
+                invoice.setCustomerName(name);
+            }
+        }
+    }
+
+    public static void setInvoiceDate(int invoiceNumber,String date) {
+        for (InvoiceHeader invoice : invoices) {
+            if (invoiceNumber == invoice.getInvoiceNum()) {
+                invoice.setInvoiceDate(date);
+            }
+        }
+    }
 }

@@ -8,7 +8,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff2b4dae-0364-47d2-aabf-2c953b968cb9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/CustomerNameListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/DeleteItemListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/InvoiceDateListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AppMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AppMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CancelEditsListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CreateInvoiceListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CreateInvoiceListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/DeleteInvoiceListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/DeleteInvoiceListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/InvoicesTableListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/InvoicesTableListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ItemsTableListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ItemsTableListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SaveEditsListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CreateItemListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SaveFileListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SaveFileListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/CurrentLoadedInvoices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CurrentLoadedInvoices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/FileOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/FileOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/InvoiceHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/InvoiceHeader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/InvoiceLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/InvoiceLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/AppFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/AppFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

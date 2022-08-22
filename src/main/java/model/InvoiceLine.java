@@ -1,9 +1,9 @@
 package model;
 
 public class InvoiceLine {
-    private final String itemName;
-    private final double  itemPrice;
-    private final int count;
+    private String itemName;
+    private double  itemPrice;
+    private int count;
 
     public InvoiceLine(String name,double price,int count){
         this.itemName = name;
@@ -21,5 +21,11 @@ public class InvoiceLine {
 
     public int getCount() {
         return this.count;
+    }
+
+    public void updateItem(String name,double price, int count) {
+        this.count = count;
+        this.itemPrice = price;
+        this.itemName = name;
     }
 }

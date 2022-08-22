@@ -13,13 +13,6 @@ import java.io.File;
 public class SaveFileListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(AppFrame.isInvoiceDataChanged()) {
-            JOptionPane.showMessageDialog(null,
-                    "Please save or cancel the current invoice changes before saving the invoices to a file",
-                    "Can't save the invoices to file",JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
             String path = "";
             FileOperations.setInvoiceLineFilePath("");
             FileOperations.setInvoiceHeaderFilePath("");

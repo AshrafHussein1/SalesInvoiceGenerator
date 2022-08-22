@@ -209,7 +209,7 @@ public class FileOperations {
 
                 try {//Validate the items count is an integer and equals or more than 1
                     count = Integer.parseInt(headerFields[3]);
-                    if (count<1)
+                    if (count<0)
                     {
                         JOptionPane.showMessageDialog(null,
                                 "The following items count is less than 1\r\n"+line,
@@ -225,7 +225,7 @@ public class FileOperations {
 
                 try{ //Validate the price is double number
                     price = Double.parseDouble(headerFields[2]);
-                    if (price<=0)
+                    if (price<0)
                     {
                         JOptionPane.showMessageDialog(null,
                                 "The following item price is less than or equal to 0\r\n"+line,

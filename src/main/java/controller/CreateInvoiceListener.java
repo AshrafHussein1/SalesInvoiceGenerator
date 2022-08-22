@@ -3,20 +3,15 @@ package controller;
 import model.CurrentLoadedInvoices;
 import model.InvoiceHeader;
 import view.AppFrame;
-
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class CreateInvoiceListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(AppFrame.isInvoiceDataChanged()) {
-            JOptionPane.showMessageDialog(null,
-                    "Please save or cancel the current invoice changes before changing the invoice",
-                    "Can't change the invoice view",JOptionPane.WARNING_MESSAGE);
-            return;
-        }
         int invoiceNum = 1;
         while(true)
         {
@@ -39,6 +34,12 @@ public class CreateInvoiceListener implements ActionListener {
                 break;
             }
         }
-        AppFrame.startNewInvoice(invoiceNum);
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = new Date();
+        String todayDate = dateFormat.format(date);
+        InvoiceHeader newInvoice = new InvoiceHeader(invoiceNum,todayDate,"Customer"+invoiceNum);
+        CurrentLoadedInvoices.updateInvoice(newInvoice);
+        AppFrame.updateInvoicesTable(CurrentLoadedInvoices.getInvoices());
+        AppFrame.resetItemsTableAndInvoiceFormToDefault();
     }
 }

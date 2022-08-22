@@ -1,16 +1,12 @@
 package view;
 
 import controller.*;
-import model.CurrentLoadedInvoices;
 import model.InvoiceHeader;
 import model.InvoiceLine;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class AppFrame extends JFrame {
 
@@ -104,9 +100,13 @@ public class AppFrame extends JFrame {
 
         // Invoice date text field configurations
         invoiceDate = new JTextField  (15);
+        InvoiceDateListener invoiceDateListener = new InvoiceDateListener();
+        invoiceDate.addActionListener(invoiceDateListener);
 
         // Customer name text field configurations
         customerName = new JTextField (15);
+        CustomerNameListener customerNameListener = new CustomerNameListener();
+        customerName.addActionListener(customerNameListener);
 
         // Invoice total text field configurations
         invoiceTotal = new JTextField (15);
@@ -148,22 +148,22 @@ public class AppFrame extends JFrame {
         invoiceItemsPanel.add(sp1);
 
         // Save button configurations
-        JButton save = new JButton("Save");
-        SaveEditsListener saveEditsListener = new SaveEditsListener();
-        save.addActionListener(saveEditsListener);
+        JButton createItem = new JButton("Create Item");
+        CreateItemListener createItemListener = new CreateItemListener();
+        createItem.addActionListener(createItemListener);
 
         // Cancel button configurations
-        JButton cancel = new JButton("Cancel");
-        CancelEditsListener cancelEditsListener = new CancelEditsListener();
-        cancel.addActionListener(cancelEditsListener);
+        JButton deleteItem = new JButton("Delete Item");
+        DeleteItemListener deleteItemListener = new DeleteItemListener();
+        deleteItem.addActionListener(deleteItemListener);
 
         // Left side panel configurations (Invoice form - Invoice items table - Save button - Cancel button)
         JPanel rightSidePanel = new JPanel();
         rightSidePanel.setLayout(new FlowLayout());
         rightSidePanel.add(invoiceFormPanel);
         rightSidePanel.add(invoiceItemsPanel);
-        rightSidePanel.add(save);
-        rightSidePanel.add(cancel);
+        rightSidePanel.add(createItem);
+        rightSidePanel.add(deleteItem);
         this.add(rightSidePanel);
 
         this.setVisible(true);
@@ -213,12 +213,11 @@ public class AppFrame extends JFrame {
         ArrayList<InvoiceLine> items = invoice.getInvoiceLines();
         double total = 0;
         if (items == null || items.size() == 0) {
-            itemsTableModel.setDataVector(new String[][]{{"", "", "", "", ""}},itemsTableHeader);
-            initialItemsTableData = new String[][]{{"", "", "", "", ""}};
+            itemsTableModel.setNumRows(0);
             itemsTableModel.fireTableDataChanged();
         }
         else {
-            String[][] itemsData= new String[items.size()+1][5];
+            String[][] itemsData= new String[items.size()][5];
             for (int index = 0 ; index< items.size() ; index++) {
                 total = total + (items.get(index).getCount() * items.get(index).getItemPrice());
                 itemsData[index][0] = Integer.toString(invoice.getInvoiceNum());
@@ -234,100 +233,14 @@ public class AppFrame extends JFrame {
         invoiceTotal.setText(Double.toString(total));
     }
 
-    public static InvoiceHeader getInvoiceUpdates() {
-        // This function will be used to return invoice updates happened after clicking on save button
-        int updatedInvoiceNumber;
-        String updatedInvoiceDate;
-        String updatedCustomerName;
-        try {
-            updatedCustomerName = customerName.getText();
-            if(updatedCustomerName.equals(""))
-            {
-                throw new Exception();
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,
-                    "The application can't extract the customer name\r\n",
-                    "Can't extract customer name", JOptionPane.ERROR_MESSAGE);
-            return null;
-        }
-        try {
-            updatedInvoiceNumber = Integer.parseInt(invoiceNumber.getText());
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,
-                    "The application can't extract the invoice number\r\n",
-                    "Can't extract invoice number", JOptionPane.ERROR_MESSAGE);
-            return null;
-        }
-        try { //Validate the invoice date is DD-MM-YYYY
-            updatedInvoiceDate = invoiceDate.getText();
-            String[] dateFields = updatedInvoiceDate.split("-");
-            int day = Integer.parseInt(dateFields[0]);
-            int month = Integer.parseInt(dateFields[1]);
-            Integer.parseInt(dateFields[2]);
-
-            if (month < 1 || month > 12) {
-                throw new Exception();
-            }
-            if (day < 1 || day > 31) {
-                throw new Exception();
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,
-                    "The application can't extract the invoice date\r\n"+"The date should be dd-mm-yyyy",
-                    "Can't extract invoice date", JOptionPane.ERROR_MESSAGE);
-            return null;
-        }
-        InvoiceHeader updatedInvoice = new InvoiceHeader(updatedInvoiceNumber,
-                updatedInvoiceDate,updatedCustomerName);
-        int itemsCount = invoiceItemsTable.getRowCount();
-        for(int index = 0 ; index<itemsCount ; index ++)
-        {
-            if (invoiceItemsTable.getValueAt(index,1) == null ||
-                    invoiceItemsTable.getValueAt(index,2) == null ||
-                    invoiceItemsTable.getValueAt(index,3) == null) {
-                //Neglect this incomplete line
-            }
-            else if (invoiceItemsTable.getValueAt(index,1).toString().isEmpty() ||
-                    invoiceItemsTable.getValueAt(index,2).toString().isEmpty() ||
-                    invoiceItemsTable.getValueAt(index,3).toString().isEmpty()) {
-                //Neglect this incomplete line
-            }
-            else
-            {
-                String updatedItemName = itemsTableModel.getValueAt(index,1).toString();
-                double updatedPrice;
-                int updatedCount;
-                try {
-                    updatedPrice = Double.parseDouble(itemsTableModel.getValueAt(index,2).toString());
-                } catch (Exception e) {
-                    JOptionPane.showMessageDialog(null,
-                            "The application can't extract the price of item in row # "+(index+1),
-                            "Can't extract item price", JOptionPane.ERROR_MESSAGE);
-                    return null;
-                }
-                try {
-                    updatedCount = Integer.parseInt(itemsTableModel.getValueAt(index,3).toString());
-                } catch (Exception e) {
-                    JOptionPane.showMessageDialog(null,
-                            "The application can't extract the count of item in row # "+(index+1),
-                            "Can't extract item count", JOptionPane.ERROR_MESSAGE);
-                    return null;
-                }
-                updatedInvoice.addInvoiceLine( new InvoiceLine( updatedItemName , updatedPrice , updatedCount));
-            }
-        }
-        return updatedInvoice;
-    }
-
     public static void resetItemsTableAndInvoiceFormToDefault() {
         // After saving or cancelling invoice updates, set the items table and invoice form empty again to wait for opening a new invoice
-        invoiceNumber.setText(null);
-        invoiceDate.setText(null);
-        customerName.setText(null);
-        invoiceTotal.setText(null);
-        initialInvoiceDate = null;
-        initialCustomerName = null;
+        invoiceNumber.setText("");
+        invoiceDate.setText("");
+        customerName.setText("");
+        invoiceTotal.setText("");
+        initialInvoiceDate = "";
+        initialCustomerName = "";
         initialItemsTableData = null;
         itemsTableModel.setNumRows(0);
         itemsTableModel.fireTableDataChanged();
@@ -341,55 +254,11 @@ public class AppFrame extends JFrame {
         return Integer.parseInt(invoicesTable.getValueAt(invoicesTable.getSelectedRow(),0).toString());
     }
 
-    public static boolean isInvoiceDataChanged() {
-        // This function tells if there is any change in the current invoice form or items table
-        // And it will be used to inform the user if he unintentionally didn't save his edits
-        try {
-            if (initialCustomerName != null && initialInvoiceDate != null && (!(customerName.getText().equals(initialCustomerName))
-                    || !(invoiceDate.getText().equals(initialInvoiceDate))))
-                return true;
-            if (initialItemsTableData == null)
-                return false;
-            if (invoiceItemsTable.getRowCount() != initialItemsTableData.length)
-                return true;
-            for (int index = 0; index < initialItemsTableData.length; index++) {
-                for (int columnIndex = 1; columnIndex < 4; columnIndex++) {
-                    if (invoiceItemsTable.getValueAt(index, columnIndex) == null && initialItemsTableData[index][columnIndex] == null)
-                        continue;
-                    String newCellValue = invoiceItemsTable.getValueAt(index, columnIndex).toString();
-                    String initialCellValue = initialItemsTableData[index][columnIndex];
-                    if (!(newCellValue.equals(initialCellValue)))
-                        return true;
-                }
-            }
-            return false;
-        }catch (Exception e){
-            return true;
-        }
+    public static int getInvoiceNumber() {
+        return Integer.parseInt(invoiceNumber.getText());
     }
 
-    public static void startNewInvoice(int newInvoiceNumber) {
-        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-        Date date = new Date();
-        String todayDate = dateFormat.format(date);
-        invoiceNumber.setText(Integer.toString(newInvoiceNumber));
-        invoiceDate.setText(todayDate);
-        customerName.setText("");
-        invoiceTotal.setText("");
-        initialInvoiceDate = todayDate;
-        initialCustomerName = "";
-        initialItemsTableData = new String[][]{{"","","","",""}};
-        itemsTableModel.setDataVector(new String[][]{{"","","","",""}},itemsTableHeader);
-        itemsTableModel.fireTableDataChanged();
-    }
-
-    public static String getInvoiceNumber()
-    {
-        return invoiceNumber.getText();
-    }
-
-    public static void setInvoiceTotal(double total)
-    {
-        invoiceTotal.setText(Double.toString(total));
+    public static int getSelectedItemIndex() {
+        return invoiceItemsTable.getSelectedRow();
     }
 }

@@ -10,12 +10,6 @@ import java.awt.event.ActionListener;
 public class DeleteInvoiceListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(AppFrame.isInvoiceDataChanged()) {
-            JOptionPane.showMessageDialog(null,
-                    "Please save or cancel the current invoice changes before changing the invoice",
-                    "Can't change the invoice view",JOptionPane.WARNING_MESSAGE);
-            return;
-        }
         int selectedInvoiceNumber = AppFrame.getSelectedInvoiceNumber();
         if(selectedInvoiceNumber == -1) { return; }
         int result = JOptionPane.showConfirmDialog(null,

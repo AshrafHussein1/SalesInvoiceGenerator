@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class InvoiceHeader {
     private final int invoiceNum;
-    private final String invoiceDate;
-    private final String customerName;
+    private String invoiceDate;
+    private String customerName;
     private final ArrayList<InvoiceLine> invoiceLines;
 
     public InvoiceHeader(int num,String date,String name) {
@@ -27,6 +27,14 @@ public class InvoiceHeader {
         return this.customerName;
     }
 
+    public void setCustomerName(String name) {
+        this.customerName = name;
+    }
+
+    public void setInvoiceDate(String date) {
+        this.invoiceDate = date;
+    }
+
     public ArrayList<InvoiceLine> getInvoiceLines() {
         return this.invoiceLines;
     }
@@ -34,5 +42,13 @@ public class InvoiceHeader {
     public void addInvoiceLine(InvoiceLine invoiceLine)
     {
         this.invoiceLines.add(invoiceLine);
+    }
+
+    public void deleteItem(int index) {
+        this.invoiceLines.remove(index);
+    }
+
+    public void updateItem(int itemIndex,String name,double price, int count) {
+        this.invoiceLines.get(itemIndex).updateItem(name,price,count);
     }
 }
